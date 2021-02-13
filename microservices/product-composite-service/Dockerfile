@@ -1,4 +1,4 @@
-FROM openjdk:12.0.2
+FROM arm64v8/openjdk
 
 EXPOSE 8080
 
