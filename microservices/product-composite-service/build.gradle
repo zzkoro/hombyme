@@ -10,9 +10,6 @@ sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
-//	maven {
-//		url 'http://oss.jfrog.org/artifcatory/oss-snapshot-local/'
-//	}
 }
 
 dependencies {
@@ -20,12 +17,7 @@ dependencies {
 	implementation project(':util:util-service')
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
-
-//	implementation 'io.springfox:springfox-swagger2:3.0.0-SNAPSHOT'
-//	implementation 'io.springfox:springfox-swagger-ui:3.0.0-SNAPSHOT'
-//	implementation 'io.springfox:springfox-spring-webflux:3.0.0-SNAPSHOT'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
