@@ -22,7 +22,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-	implementation('mysql:mysql-connector-java')
+	implementation('org.mariadb.jdbc:mariadb-java-client')
 	implementation("org.mapstruct:mapstruct:${mapstructVersion}")
 
 	compileOnly 'org.projectlombok:lombok'

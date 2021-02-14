@@ -37,6 +37,7 @@ public class ReviewServiceImpl implements ReviewService {
     public Review createReview(Review body) {
         try {
             ReviewEntity entity = mapper.apiToEntity(body);
+
             ReviewEntity newEntity = repository.save(entity);
 
             LOG.debug("createReview: created a review entity: {}/{}", body.getProductId(), body.getReviewId());

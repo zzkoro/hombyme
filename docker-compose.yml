@@ -36,7 +36,7 @@ services:
 
   # $ mysql -uroot -h127.0.0.1 -p
   mysql:
-    image: mysql:5.7
+    image: mariadb:latest
     mem_limit: 350m
     ports:
       - "3306:3306"
@@ -50,3 +50,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
+
+ # mongo_boot:
+ #   ports:
+ #     - "27017:27017"
+networks:
+  default:
+    external:
+      name: hombyme_default

@@ -1,7 +1,8 @@
-package com.jipps.hombyme.product.services;
+package com.jipps.hombyme.product;
 
 import com.jipps.hombyme.api.core.product.Product;
 import com.jipps.hombyme.product.persistence.ProductEntity;
+import com.jipps.hombyme.product.services.ProductMapper;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 
