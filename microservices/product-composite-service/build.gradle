@@ -1,5 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.0'
+//	id 'org.springframework.boot' version '2.4.0'
+	id 'org.springframework.boot' version '2.3.9.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
 }
@@ -12,16 +13,31 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+//	springCloudVersion = "2020.0.1"
+	springCloudVersion = "Hoxton.SR10"
+}
+
 dependencies {
 	implementation project(':api:api-service')
 	implementation project(':util:util-service')
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	implementation('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+	implementation('org.springframework.cloud:spring-cloud-starter-stream-kafka')
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
+	testImplementation('org.springframework.cloud:spring-cloud-stream-test-support')
 }
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
 
 test {
 	useJUnitPlatform()

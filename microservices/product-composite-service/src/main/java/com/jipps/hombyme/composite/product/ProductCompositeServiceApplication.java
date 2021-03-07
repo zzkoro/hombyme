@@ -1,6 +1,7 @@
 package com.jipps.hombyme.composite.product;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.jipps.hombyme.composite.product.services.ProductCompositeIntegration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +16,10 @@ public class ProductCompositeServiceApplication {
 	RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+
+	@Autowired
+	ProductCompositeIntegration integration;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductCompositeServiceApplication.class, args);

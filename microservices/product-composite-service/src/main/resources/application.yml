@@ -45,11 +45,33 @@ app:
     host: localhost
     port: 7003
 
----
 spring:
-  config:
-    activate:
-      on-profile: docker
+  cloud:
+    stream:
+      defaultBinder: rabbit
+      default.contentType: application/json
+      bindings:
+        output-products:
+          destination: products
+          producer:
+            required-groups: auditGroup
+        output-recommendations:
+          destination: recommendations
+          producer:
+            required-groups: auditGroup
+        output-reviews:
+          destination: reviews
+          producer:
+            required-groups: auditGroup
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+---
+spring.profiles: docker
+
 server:
   port: 8080
 
