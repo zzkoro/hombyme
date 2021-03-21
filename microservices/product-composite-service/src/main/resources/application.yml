@@ -63,6 +63,7 @@ spring:
           destination: reviews
           producer:
             required-groups: auditGroup
+
   rabbitmq:
     host: 127.0.0.1
     port: 5672
@@ -85,3 +86,7 @@ app:
   review-service:
     host: review
     port: 8080
+
+spring.rabbitmq.host: rabbitmq
+
+spring.cloud.stream.kafka.binder.brokers: kafka
